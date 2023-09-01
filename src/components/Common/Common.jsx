@@ -9,13 +9,13 @@ const Common = () => {
         <div>
             <Container>
                 <Row>
-                    <Col md={3} className="border">
+                    <Col md={3}>
                         <LeftNavigation></LeftNavigation>
                     </Col>
-                    <Col md={6} className="border">
+                    <Col md={6}>
                         <Outlet></Outlet>
                     </Col>
-                    <Col md={3} className="border">
+                    <Col md={3}>
                         <RightNavigation></RightNavigation>
                     </Col>
                 </Row>
