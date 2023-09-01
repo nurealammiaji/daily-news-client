@@ -10,6 +10,8 @@ import Error from './components/Error/Error.jsx';
 import About from './components/About/About.jsx';
 import Career from './components/Career/Career';
 import Home from './components/Home/Home.jsx';
+import Login from './components/Login/Login.jsx';
+import Register from './components/Register/Register.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
         element: <Career></Career>
       }
     ]
+  },
+  {
+    path: "login",
+    element: <Login></Login>
+  },
+  {
+    path: "register",
+    element: <Register></Register>
   }
 ])
 
