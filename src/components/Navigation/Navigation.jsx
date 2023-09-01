@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
+import { FaUserCircle } from 'react-icons/fa';
 
 const Navigation = () => {
     return (
@@ -14,7 +15,7 @@ const Navigation = () => {
                         <Nav.Link href="/career">Career</Nav.Link>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#">Profile</Nav.Link>
+                        <Nav.Link href="#"><FaUserCircle className='fs-4'/></Nav.Link>
                         <Button variant='secondary' className='rounded-0'>Login</Button>
                     </Nav>
                     </Navbar.Collapse>
