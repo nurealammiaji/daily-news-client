@@ -14,8 +14,8 @@ const Home = () => {
     })
     return (
         <div>
-            <div>
-                <h5>Daily News Home</h5>
+            <div className="text-start">
+                <h5 className="mb-3">Daily News Home</h5>
                 <div>
                     {
                         news.map(news => <News key={news.id} news={news}></News>)
