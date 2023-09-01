@@ -1,9 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useContext } from 'react';
 import { Container, Nav, Navbar, Button } from "react-bootstrap";
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/Providers';
 
 const Navigation = () => {
+
+    const user = useContext(AuthContext);
+
     return (
         <div>
             <Navbar expand="lg" className="bg-body-tertiary">
@@ -16,7 +21,7 @@ const Navigation = () => {
                         <Nav.Link href="/career">Career</Nav.Link>
                     </Nav>
                     <Nav className=''>
-                        <Nav.Link href="#"><FaUserCircle className='fs-4'/></Nav.Link>
+                        <Nav.Link href="#"><FaUserCircle className='fs-4'/>{user.user.displayName}</Nav.Link>
                         <Link to="/login"><Button variant='secondary' className='rounded-0'>Login</Button></Link>
                     </Nav>
                     </Navbar.Collapse>

@@ -12,6 +12,7 @@ import Career from './components/Career/Career';
 import Home from './components/Home/Home.jsx';
 import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
+import Providers from './components/Providers/Providers.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <Providers>
+      <RouterProvider router={router}></RouterProvider>
+    </Providers>
   </React.StrictMode>,
 )
