@@ -15,7 +15,7 @@ const Navigation = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#">Profile</Nav.Link>
-                        <Button>Login</Button>
+                        <Button variant='secondary' className='rounded-0'>Login</Button>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
