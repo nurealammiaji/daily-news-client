@@ -7,7 +7,7 @@ import { AuthContext } from '../Providers/Providers';
 
 const Navigation = () => {
 
-    const user = useContext(AuthContext);
+    const {user} = useContext(AuthContext);
 
     return (
         <div>
@@ -21,8 +21,8 @@ const Navigation = () => {
                         <Nav.Link href="/career">Career</Nav.Link>
                     </Nav>
                     <Nav className=''>
-                        <Nav.Link href="#"><FaUserCircle className='fs-4'/>{user.user.displayName}</Nav.Link>
-                        <Link to="/login"><Button variant='secondary' className='rounded-0'>Login</Button></Link>
+                        <Nav.Link href="#">{(user) ? user.email : <FaUserCircle className='fs-4'/>}</Nav.Link>
+                        {(user) ? <Button variant='secondary' className='rounded-0'>Logout</Button> : <Link to="/login"><Button variant='secondary' className='rounded-0'>Login</Button></Link>}
                     </Nav>
                     </Navbar.Collapse>
                 </Container>
