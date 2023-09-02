@@ -1,13 +1,27 @@
+import { useContext } from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import { AuthContext } from "../Providers/Providers";
 
 const RightNavigation = () => {
+
+    const { googleLogin } = useContext(AuthContext);
+
+    const googleLoginHandler = () => {
+        googleLogin()
+        .then(result => {
+            const loggedUser = result.user;
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
 
     return (
         <div>
             <div>
                 <h5 className="text-start mb-3">Login</h5>
-                <Button className="w-100" variant="outline-primary"><FaGoogle/> Login with Google</Button>
+                <Button onClick={googleLoginHandler} className="w-100" variant="outline-primary"><FaGoogle/> Login with Google</Button>
                 <br />
                 <Button className="w-100 mt-2" variant="outline-secondary"><FaGithub/> Login with Github</Button>
             </div>
