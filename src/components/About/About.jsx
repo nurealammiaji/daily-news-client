@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <div>
+        <div className="text-start">
             <h5>About</h5>
         </div>
     );

@@ -12,7 +12,7 @@ const News = ({news}) => {
                     <div className="w-25">
                         <img className="img-fluid p-4 rounded-circle" src={author.img} alt="" />
                     </div>
-                    <div>
+                    <div className="mt-3">
                         <p>{author.name}</p>
                         <p>{author.published_date}</p>
                     </div>

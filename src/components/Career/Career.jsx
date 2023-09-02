@@ -2,7 +2,7 @@
 
 const Career = () => {
     return (
-        <div>
+        <div className="text-start">
             <h5>Career</h5>
         </div>
     );
