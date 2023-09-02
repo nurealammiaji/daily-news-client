@@ -21,7 +21,7 @@ const Navigation = () => {
                             <Link className="p-2 text-decoration-none text-secondary" to="/career">Career</Link>
                         </Nav>
                         <Nav className=''>
-                            <Link className='p-2 text-secondary' to="/profile">{(user) ? user.email : <FaUserCircle className='fs-4'/>}</Link>
+                            <Link className='p-2 text-secondary text-decoration-none' to="/profile">{(user) ? user.email || user.displayName : <FaUserCircle className='fs-4'/>}</Link>
                             {(user) ? <Button onClick={logout} variant='secondary' className='rounded-0'>Logout</Button> : <Link to="/login"><Button variant='secondary' className='rounded-0'>Login</Button></Link>}
                         </Nav>
                     </Navbar.Collapse>

@@ -5,12 +5,24 @@ import { AuthContext } from "../Providers/Providers";
 
 const RightNavigation = () => {
 
-    const { googleLogin } = useContext(AuthContext);
+    const { googleLogin, githubLogin } = useContext(AuthContext);
 
     const googleLoginHandler = () => {
         googleLogin()
         .then(result => {
             const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error);
+        })
+    }
+
+    const githubLoginHandler = () => {
+        githubLogin()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
         })
         .catch(error => {
             console.log(error);
@@ -23,7 +35,7 @@ const RightNavigation = () => {
                 <h5 className="text-start mb-3">Login</h5>
                 <Button onClick={googleLoginHandler} className="w-100" variant="outline-primary"><FaGoogle/> Login with Google</Button>
                 <br />
-                <Button className="w-100 mt-2" variant="outline-secondary"><FaGithub/> Login with Github</Button>
+                <Button onClick={githubLoginHandler} className="w-100 mt-2" variant="outline-secondary"><FaGithub/> Login with Github</Button>
             </div>
             <br />
             <div className="text-start">

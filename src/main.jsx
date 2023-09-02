@@ -14,6 +14,7 @@ import Login from './components/Login/Login.jsx';
 import Register from './components/Register/Register.jsx';
 import Providers from './components/Providers/Providers.jsx';
 import Profile from './components/Profile/Profile.jsx';
+import Private from './components/Private/Private.jsx';
 
 const router = createBrowserRouter([
   {
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
       },
       {
         path: "career",
-        element: <Career></Career>
+        element: <Private><Career></Career></Private>
       }
     ]
   },
@@ -45,7 +46,7 @@ const router = createBrowserRouter([
   },
   {
     path: "profile",
-    element: <Profile></Profile>
+    element: <Private><Profile></Profile></Private>
   }
 ])
 
