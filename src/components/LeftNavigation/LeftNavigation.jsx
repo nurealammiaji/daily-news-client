@@ -35,7 +35,7 @@ const LeftNavigation = () => {
                     </Button> :
                     <div className="ms-3">
                         {
-                            categories.map(category => <p key={category.id}><Link className="text-decoration-none" to={`/categories/${category.id}`}>{category.name}</Link></p>)
+                            categories.map(category => <div className="my-2 p-1" key={category.id}><Link className="text-decoration-none text-secondary" to={`/categories/${category.id}`}>{category.name}</Link></div>)
                         }
                     </div>
                 }

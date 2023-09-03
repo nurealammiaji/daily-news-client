@@ -17,7 +17,7 @@ import Profile from './components/Profile/Profile.jsx';
 import Private from './components/Private/Private.jsx';
 import Forgot from './components/Forgot/Forgot.jsx';
 import Category from './components/Category/Category.jsx';
-import NewsLayout from './components/NewsLayout/NewsLayout.jsx';
+import NewsLayout from './components/NewsLayout/NewsLayout';
 
 const router = createBrowserRouter([
   {
@@ -49,8 +49,9 @@ const router = createBrowserRouter([
     element: <Register></Register>
   },
   {
-    path: "news",
-    element: <NewsLayout></NewsLayout>
+    path: "/news/:id",
+    element: <NewsLayout></NewsLayout>,
+    loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
   },
   {
     path: "login",

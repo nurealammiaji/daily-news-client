@@ -1,5 +1,5 @@
-import { useLoaderData, useParams } from "react-router-dom";
-
+import { Navigate, useLoaderData, useParams } from "react-router-dom";
+import CategoryNewsCard from "../CategoryNewsCard/CategoryNewsCard";
 
 const Category = () => {
 
@@ -10,7 +10,10 @@ const Category = () => {
 
     return (
         <div>
-            <h3>Category Have {categoryNews.length} News</h3>
+            {
+                (categoryNews.length > 0) ?
+                categoryNews.map(news => (news._id !== 0) ? <CategoryNewsCard key={news._id} news={news}></CategoryNewsCard> : <Navigate key={news._id} to="/" replace={true}></Navigate>) : <div><h4>No News Found</h4></div>
+            }
         </div>
     );
 };

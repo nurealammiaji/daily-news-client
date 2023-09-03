@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-const HomeNewsCard = ({ news }) => {
+
+const CategoryNewsCard = ({ news }) => {
 
     const { _id, author, title, image_url, details } = news;
 
@@ -9,7 +10,7 @@ const HomeNewsCard = ({ news }) => {
             <div className="border rounded-2">
                 <div className="d-flex align-items-center bg-light rounded-top-2">
                     <div className="px-3">
-                        <img style={{height: 50}} className="img-fluid rounded-circle" src={author?.img} alt="" />
+                        <img style={{ height: 50 }} className="img-fluid rounded-circle" src={author?.img} alt="" />
                     </div>
                     <div className="mt-3">
                         <p>{author?.name}</p>
@@ -31,4 +32,4 @@ const HomeNewsCard = ({ news }) => {
     );
 };
 
-export default HomeNewsCard;
+export default CategoryNewsCard;
