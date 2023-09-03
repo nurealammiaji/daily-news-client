@@ -2,11 +2,18 @@ import { Form, Button, Container } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation.jsx";
 import { useContext } from "react";
 import { AuthContext } from "../Providers/Providers";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
     const {login} = useContext(AuthContext);
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+
+    const from = location.state?.from?.pathname || "/";
+    console.log(from);
 
     const loginHandler = (event) => {
         event.preventDefault();
@@ -43,6 +50,7 @@ const Login = () => {
             })
 
             form.reset();
+            navigate(from, {replace: true})
         }
     }
 
@@ -68,7 +76,10 @@ const Login = () => {
                             <Button type="submit" className="w-100 mt-3 fs-5 fw-medium" variant="secondary">Login</Button>
                         </Form>
                     </Container>
-                    <h6 className="mt-5">Dont’t Have An Account ? <Link className="text-danger text-decoration-none" to="/register">Register</Link> </h6>
+                    <div className="mt-5 d-flex justify-content-between">
+                        <small>Need Account? <Link className="text-danger text-decoration-none" to="/register">Register</Link> </small>
+                        <small>Forgot password? <Link className="text-danger text-decoration-none" to="/forgot">Reset</Link> </small>
+                    </div>
                 </div>
             </div>
             <br /><br />

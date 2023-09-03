@@ -15,6 +15,7 @@ import Register from './components/Register/Register.jsx';
 import Providers from './components/Providers/Providers.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import Private from './components/Private/Private.jsx';
+import Forgot from './components/Forgot/Forgot.jsx';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "login",
     element: <Login></Login>
+  },
+  {
+    path: "forgot",
+    element: <Forgot></Forgot>
   },
   {
     path: "profile",
