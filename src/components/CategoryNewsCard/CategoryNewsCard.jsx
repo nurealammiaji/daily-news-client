@@ -6,7 +6,7 @@ const CategoryNewsCard = ({ news }) => {
     const { _id, author, title, image_url, details } = news;
 
     return (
-        <div>
+        <div className="text-start">
             <div className="border rounded-2">
                 <div className="d-flex align-items-center bg-light rounded-top-2">
                     <div className="px-3">
