@@ -16,6 +16,8 @@ import Providers from './components/Providers/Providers.jsx';
 import Profile from './components/Profile/Profile.jsx';
 import Private from './components/Private/Private.jsx';
 import Forgot from './components/Forgot/Forgot.jsx';
+import Category from './components/Category/Category.jsx';
+import NewsLayout from './components/NewsLayout/NewsLayout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,12 +36,20 @@ const router = createBrowserRouter([
       {
         path: "career",
         element: <Private><Career></Career></Private>
+      },
+      {
+        path: "/categories/:id",
+        element: <Category></Category>
       }
     ]
   },
   {
     path: "register",
     element: <Register></Register>
+  },
+  {
+    path: "news",
+    element: <NewsLayout></NewsLayout>
   },
   {
     path: "login",

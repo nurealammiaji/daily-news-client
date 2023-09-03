@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import News from "../News/News";
 import { Button, Spinner } from "react-bootstrap";
-
+import NewsCard from "../NewsCard/NewsCard";
 
 const Home = () => {
 
@@ -35,7 +34,7 @@ const Home = () => {
                     </Button> :
                     <div>
                         {
-                            news.map(news => <News key={news.id} news={news}></News>)
+                            news.map(news => <NewsCard key={news._id} news={news}></NewsCard>)
                         }
                     </div>
                 }

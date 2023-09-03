@@ -1,6 +1,6 @@
 
 
-const News = ({news}) => {
+const NewsCard = ({news}) => {
 
 
     const {id, author, title, image_url, details} = news;
@@ -28,4 +28,4 @@ const News = ({news}) => {
     );
 };
 
-export default News;
+export default NewsCard;

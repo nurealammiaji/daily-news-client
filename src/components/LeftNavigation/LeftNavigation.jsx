@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, Spinner } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const LeftNavigation = () => {
 
@@ -34,7 +35,7 @@ const LeftNavigation = () => {
                     </Button> :
                     <div className="ms-3">
                         {
-                            categories.map(category => <p key={category.id}><a className="text-decoration-none" href={category.id}>{category.name}</a></p>)
+                            categories.map(category => <p key={category.id}><Link className="text-decoration-none" to={`/categories/${category.id}`}>{category.name}</Link></p>)
                         }
                     </div>
                 }
