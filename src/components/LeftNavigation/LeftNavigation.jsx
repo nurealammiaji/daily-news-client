@@ -8,7 +8,7 @@ const LeftNavigation = () => {
     const [categories, setCategories] = useState(null);
 
     useEffect( () => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://daily-news-server-nurealammiaji.vercel.app/categories')
         .then(res => res.json())
         .then(data => setCategories(data))
         .catch(console.error);

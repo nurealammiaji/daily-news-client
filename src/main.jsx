@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/categories/:id",
         element: <Category></Category>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+        loader: ({ params }) => fetch(`https://daily-news-server-nurealammiaji.vercel.app/categories/${params.id}`)
       }
     ]
   },
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
   {
     path: "/news/:id",
     element: <Private><NewsLayout></NewsLayout></Private>,
-    loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
+    loader: ({params}) => fetch(`https://daily-news-server-nurealammiaji.vercel.app/news/${params.id}`)
   },
   {
     path: "login",

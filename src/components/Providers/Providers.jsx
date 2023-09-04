@@ -53,7 +53,7 @@ const Providers = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        fetch('http://localhost:5000/news')
+        fetch('https://daily-news-server-nurealammiaji.vercel.app/news')
             .then(res => res.json())
             .then(data => setNews(data))
             .catch(error => console.error(error));
