@@ -2,6 +2,9 @@ import { useContext } from "react";
 import { Button, ListGroup } from "react-bootstrap";
 import { FaGoogle, FaGithub, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { AuthContext } from "../Providers/Providers";
+import qZone1 from "../../assets/qZone1.png";
+import qZone2 from "../../assets/qZone2.png";
+import qZone3 from "../../assets/qZone3.png";
 
 const RightNavigation = () => {
 
@@ -45,6 +48,21 @@ const RightNavigation = () => {
                     <ListGroup.Item><FaTwitter/> Twitter</ListGroup.Item>
                     <ListGroup.Item><FaInstagram/> Instagram</ListGroup.Item>
                 </ListGroup>
+            </div>
+            <br />
+            <div className="bg-light rounded-2 p-3">
+                <div>
+                    <h5 className="text-start fw-medium">Q-Zone</h5>
+                </div>
+                <div>
+                    <img className="img-fluid" src={qZone1} alt="" />
+                </div>
+                <div>
+                    <img className="img-fluid" src={qZone2} alt="" />
+                </div>
+                <div>
+                    <img className="img-fluid" src={qZone3} alt="" />
+                </div>
             </div>
             <br />
         </div>
