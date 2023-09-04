@@ -18,6 +18,7 @@ import Private from './components/Private/Private.jsx';
 import Forgot from './components/Forgot/Forgot.jsx';
 import Category from './components/Category/Category.jsx';
 import NewsLayout from './components/NewsLayout/NewsLayout';
+import Terms from './components/Terms/Terms.jsx';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: "profile",
     element: <Private><Profile></Profile></Private>
+  },
+  {
+    path: "terms",
+    element: <Terms></Terms>
   }
 ])
 
