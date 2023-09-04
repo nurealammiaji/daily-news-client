@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 const CategoryNewsCard = ({ news }) => {
 
     const { _id, author, title, image_url, details } = news;
