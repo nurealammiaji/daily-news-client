@@ -1,13 +1,14 @@
 import { Button, Container, Form } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/Providers";
 import { Link } from "react-router-dom";
 
 
 const Register = () => {
 
-    const {register} = useContext(AuthContext);
+    const { register } = useContext(AuthContext);
+    const [checked, setChecked] = useState(false);
 
     const registerHandler = (event) => {
         event.preventDefault();
@@ -16,7 +17,7 @@ const Register = () => {
         const password = form.password.value;
         const confirm = form.confirm.value;
         console.log(email, password, confirm);
-        if (password !== confirm ) {
+        if (password !== confirm) {
             console.log("Password and Confirm Password must be same");
             return;
         }
@@ -40,17 +41,23 @@ const Register = () => {
         }
         else {
             register(email, password)
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-            })
-            .catch(error => {
-                console.log(error);
-            })
+                .then(result => {
+                    const loggedUser = result.user;
+                    console.log(loggedUser);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
 
             form.reset();
         }
     }
+
+    const checkBoxHandler = (event) => {
+        setChecked(event.target.checked);
+    }
+    console.log(checked);
+
     return (
         <div className="bg-light">
             <br /><br />
@@ -74,7 +81,10 @@ const Register = () => {
                                 <Form.Label className="fs-5 mb-3 fw-medium">Confirm Password</Form.Label>
                                 <Form.Control className="bg-light" type="password" name="confirm" placeholder="Re-Enter your password" />
                             </Form.Group>
-                            <Button type="submit" className="w-100 mt-3 fs-5 fw-medium" variant="secondary">Register</Button>
+                            <Form.Group className="mb-1" controlId="formBasicCheckbox">
+                                <Form.Check type="checkbox" onClick={checkBoxHandler} label={<>Accept our <Link className="text-decoration-none" to="/terms">Terms & Conditions</Link></>} />
+                            </Form.Group>
+                            <Button type="submit" className="w-100 mt-3 fs-5 fw-medium" variant="secondary" disabled={!checked}>Register</Button>
                         </Form>
                     </Container>
                     <h6 className="mt-5">Already Have An Account ? <Link className="text-danger text-decoration-none" to="/login">Login</Link> </h6>
