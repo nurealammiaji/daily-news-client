@@ -63,7 +63,7 @@ const Register = () => {
             <br /><br />
             <Navigation></Navigation>
             <br /><br /><br />
-            <div className="w-50 mx-auto bg-white p-5 rounded-2">
+            <div style={{ maxWidth: 500 }} className="mx-auto bg-white p-5 rounded-2">
                 <h3 className="fw-bold">Register your account</h3>
                 <hr className="my-5" />
                 <div>

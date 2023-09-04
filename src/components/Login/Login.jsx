@@ -6,14 +6,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-    const {login} = useContext(AuthContext);
+    const { login } = useContext(AuthContext);
 
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
 
     const from = location.state?.from?.pathname || "/";
-    console.log(from);
 
     const loginHandler = (event) => {
         event.preventDefault();
@@ -41,14 +39,14 @@ const Login = () => {
         }
         else {
             login(email, password)
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                navigate(from, {replace: true});
-            })
-            .catch(error => {
-                console.log(error);
-            })
+                .then(result => {
+                    const loggedUser = result.user;
+                    console.log(loggedUser);
+                    navigate(from, { replace: true });
+                })
+                .catch(error => {
+                    console.log(error);
+                })
 
             form.reset();
         }
@@ -59,11 +57,11 @@ const Login = () => {
             <br /><br />
             <Navigation></Navigation>
             <br /><br /><br />
-            <div className="w-50 mx-auto bg-white p-5 rounded-2">
+            <div style={{ maxWidth: 500 }} className="mx-auto bg-white p-5 rounded-2">
                 <h3 className="fw-bold">Login your account</h3>
                 <hr className="my-5" />
                 <div>
-                    <Container>
+                    <Container fluid>
                         <Form onSubmit={loginHandler} className="text-start">
                             <Form.Group className="mb-3" controlId="formGroupEmail">
                                 <Form.Label className="fs-5 mb-3 fw-medium">Email address</Form.Label>
