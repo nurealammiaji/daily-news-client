@@ -2,13 +2,15 @@ import { Button, Container, Form } from "react-bootstrap";
 import Navigation from "../Navigation/Navigation";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/Providers";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const Register = () => {
 
     const { register } = useContext(AuthContext);
     const [checked, setChecked] = useState(false);
+
+    const navigate = useNavigate();
 
     const registerHandler = (event) => {
         event.preventDefault();
@@ -44,6 +46,7 @@ const Register = () => {
                 .then(result => {
                     const loggedUser = result.user;
                     console.log(loggedUser);
+                    navigate("/");
                 })
                 .catch(error => {
                     console.log(error);
