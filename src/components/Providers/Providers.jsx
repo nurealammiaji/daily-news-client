@@ -7,9 +7,10 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 export const AuthContext = createContext();
 
-const Providers = ({children}) => {
+const Providers = ({ children }) => {
 
     const [user, setUser] = useState(null);
+    const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const register = (email, password) => {
@@ -51,9 +52,17 @@ const Providers = ({children}) => {
         }
     }, [])
 
+    useEffect(() => {
+        fetch('http://localhost:5000/news')
+            .then(res => res.json())
+            .then(data => setNews(data))
+            .catch(error => console.error(error));
+    }, [])
+
     const authInfo = {
         user,
         loading,
+        news,
         register,
         login,
         googleLogin,
